@@ -387,14 +387,14 @@ function showPremiumCard() {
             .premium-card {
                 position: fixed; top: 50%; left: 50%;
                 transform: translate(-50%, -50%) perspective(1000px) rotateX(90deg) scale(0.5);
-                width: 90%; max-width: 650px; z-index: 9999;
-                text-align: center; padding: 50px 40px; border-radius: 15px;
+                width: 92%; max-width: 650px; z-index: 9999;
+                text-align: center; padding: 45px 35px; border-radius: 15px;
                 background: linear-gradient(145deg, #740001, #300000);
                 border: 2px solid #D4AF37;
                 box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(212, 175, 55, 0.2) inset;
                 opacity: 0;
                 transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-                color: #FFF8E7; overflow: hidden;
+                color: #FFF8E7; overflow-y: auto; max-height: 85vh;
             }
             
             .premium-card::before {
@@ -410,20 +410,20 @@ function showPremiumCard() {
                 font-family: 'Dancing Script', cursive;
                 background: linear-gradient(to right, #D4AF37, #FFDF00, #D4AF37);
                 -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-                font-size: 3rem; margin-bottom: 25px; 
+                font-size: 2.8rem; margin-bottom: 25px; 
                 filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
             }
             
             .msg-line {
-                font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 1.6;
-                color: #FFF8E7; margin-bottom: 12px; text-align: justify;
-                opacity: 0; transform: translateY(20px); transition: opacity 1s ease, transform 1s ease;
+                font-family: 'Montserrat', sans-serif; font-size: 15px; line-height: 1.7;
+                color: #FFF8E7; margin-bottom: 18px; text-align: justify;
+                opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease;
             }
             .msg-visible { opacity: 1; transform: translateY(0); }
             .highlight-gold { color: #FFD700; font-weight: 700; }
             
             .final-line {
-                font-family: 'Playfair Display', serif; font-size: 24px;
+                font-family: 'Playfair Display', serif; font-size: 22px;
                 color: #D4AF37; margin-top: 30px; opacity: 0; transform: scale(0.8);
                 transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1);
                 text-transform: uppercase; letter-spacing: 2px;
@@ -433,17 +433,20 @@ function showPremiumCard() {
             .final-visible { opacity: 1; transform: scale(1); }
         </style>
         
-        <div class="card-title">Happy New Year Thu Thảo!</div>
+        <div class="card-title">Happy New Year, Thu Thảo!</div>
         <div id="line1" class="msg-line">
-            ✨ Năm mới 2026 rồi, chúc <span class="highlight-gold">Thu Thảo</span> một năm thật nhiều niềm vui, sức khỏe và mọi thứ đều thuận lợi hơn năm cũ. Mong là những điều cậu đang cố gắng sẽ dần thành hiện thực, còn những điều chưa kịp bắt đầu thì… biết đâu sẽ nở rộ trong năm nay.
+            ✨ Năm 2026 tới rồi, chúc <span class="highlight-gold">Thu Thảo</span> có một năm nhiều niềm vui hơn, sức khỏe ổn định và mọi thứ nhìn chung suôn sẻ hơn năm vừa rồi. Mong là những gì cô ấy đang cố gắng sẽ dần có kết quả, còn những dự định còn để đó thì năm nay sẽ có dịp bắt tay vào làm và làm theo đúng cách cậu muốn.
         </div>
         <div id="line2" class="msg-line">
-            🌟 Hy vọng năm mới mang đến cho cậu thật nhiều may mắn, những cơ hội tốt và cả những ngày bình yên để tận hưởng cuộc sống theo cách cậu muốn. 
+            🌟 Hy vọng năm mới mang đến cho cậu thêm may mắn, những cơ hội phù hợp và nhiều kỷ niệm đáng nhớ. Mong là tụi mình vẫn sẽ có thêm một năm đồng hành với nhau, trải qua đủ thứ chuyện linh tinh nhưng vui.
         </div>
         <div id="line3" class="msg-line">
-            💌 Cảm ơn vì đã luôn là một người bạn rất đặc biệt — người mà mình có thể chia sẻ bất cứ lúc nào, kể cả những chuyện nhỏ nhặt nhất. Chúc cậu một năm bình an và đầy năng lượng tích cực!
+            💛 Cảm ơn vì đã là bạn với tui — không chỉ là người để nói chuyện khi cần mà còn là người hiểu tui theo kiểu rất riêng. Sau này có bận rộn cỡ nào thì cũng mong tụi mình vẫn có vài cuộc hẹn đi chơi cùng nhau nhá.
         </div>
-        <div id="line4" class="final-line">Chúc Mừng Năm Mới 2026</div>
+        <div id="line4" class="msg-line" style="text-align: center; font-style: italic; color: #FFD700; font-size: 16px;">
+            Chúc cô ấy một năm mới bình an hơn, vui vẻ hơn, làm gì cũng thuận hơn và vẫn giữ được năng lượng tích cực của mình.
+        </div>
+        <div id="line5" class="final-line">CHÚC MỪNG NĂM MỚI 2026</div>
     `;
     document.body.appendChild(container);
 
@@ -452,11 +455,12 @@ function showPremiumCard() {
         container.classList.add('card-visible');
         setTimeout(() => { container.classList.add('card-floating'); }, 2200);
         
-        var delay = 1200;
-        setTimeout(() => { document.getElementById('line1').classList.add('msg-visible'); }, 500);
-        setTimeout(() => { document.getElementById('line2').classList.add('msg-visible'); }, 500 + delay);
-        setTimeout(() => { document.getElementById('line3').classList.add('msg-visible'); }, 500 + delay * 2);
-        setTimeout(() => { document.getElementById('line4').classList.add('final-visible'); }, 500 + delay * 3 + 500);
+        var delay = 1300;
+        setTimeout(() => { document.getElementById('line1').classList.add('msg-visible'); }, 600);
+        setTimeout(() => { document.getElementById('line2').classList.add('msg-visible'); }, 600 + delay);
+        setTimeout(() => { document.getElementById('line3').classList.add('msg-visible'); }, 600 + delay * 2);
+        setTimeout(() => { document.getElementById('line4').classList.add('msg-visible'); }, 600 + delay * 3);
+        setTimeout(() => { document.getElementById('line5').classList.add('final-visible'); }, 600 + delay * 4);
     }, 100);
 }
 
